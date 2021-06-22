@@ -75,7 +75,7 @@ add(1,2,3,4,5);
  * 
  ***************************/
 
-function User(name,age,...skills){
+function User(name,age,...skills){ // ... < 나머지 매개변수는 항상 마지막에 위치해야함.
     this.name = name;
     this.age = age;
     this.skill = skills;

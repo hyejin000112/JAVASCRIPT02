@@ -65,4 +65,6 @@ console.log(userReduResult);
 
 ////////////////////////////////////////////
 
-//
+////arr.reduceRight()
+
+
