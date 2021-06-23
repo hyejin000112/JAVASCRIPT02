@@ -37,3 +37,34 @@ addOne(5); // 함수가 실행되면 새로운 렉시컬 환경이 만들어짐
             //함수로 인해 생긴 렉시컬환경은 내부 렉시컬환경이며 
             //one과 addOne같은 변수,함수생성으로 인한 렉시컬 환경은 전역렉시컬환경이다.
             //내부 렉시컬 환경은전역렉시컬환경을 참조한다.
+
+
+
+
+//############################################내가이해한 예제
+
+// function init() {
+//     var name = "Mozilla"; // name은 init에 의해 생성된 지역 변수이다.
+//     function displayName() { // displayName() 은 내부 함수이며, 클로저다.
+//       console.log(name); // 부모 함수에서 선언된 변수를 사용한다.
+//     }
+//     displayName();
+//   }
+//   init();
+
+
+
+function makeFunc() {
+    var name = "Mozilla";
+    function displayName() {
+      console.log(name);
+    }
+    return displayName;
+  }
+  
+  var myFunc = makeFunc();
+  
+  //myFunc변수에 displayName을 리턴함
+  //유효범위의 어휘적 환경을 유지
+  myFunc();
+  //리턴된 displayName 함수를 실행(name 변수에 접근)
